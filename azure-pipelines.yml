@@ -42,15 +42,6 @@ steps:
 - script: 'python aml_service/00-WorkSpace.py'
   displayName: 'Get or Create Workspace'
 
-- script: 'python aml_service/03-AttachAmlCluster.py'
-  displayName: 'Create AML Compute Cluster'
-
-- script: 'python aml_service/04-AmlPipelines.py'
-  displayName: 'Create and Test AML Pipeline'
-
-- script: 'python aml_service/04-AmlPipelines.py --pipeline_action publish'
-  displayName: 'Publish AML Pipeline as Endpoint'
-
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
