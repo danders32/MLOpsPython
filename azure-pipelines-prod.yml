@@ -6,7 +6,7 @@ pool:
 #Your build pipeline references a secret variable named ‘subscription_id’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it secret. See https://go.microsoft.com/fwlink/?linkid=865972
 
 variables:
-- group: PartnerDeployerVariableGroup
+- group: FreeTrialVariableGroup
 
 trigger:
 - master
@@ -27,12 +27,12 @@ steps:
     workingDirectory: 'environment_setup'
 
 - script: | 
-   az login --service-principal -u $(partnerdeployspidentity) -p $(partnerdeployspsecret) --tenant $(partnerdeploysptenant)
+   az login --service-principal -u $(freetrialspidentity) -p $(freetrialspsecret) --tenant $(freetrialsptenant)
    
   displayName: 'Login to Azure'
 
 - script: |
-   sed -i 's#"partnerdeployspsubscriptionid": "<>"#"partnerdeployspsubscriptionid": "$(partnerdeployspsubscriptionid)"#g' aml_config/config.json
+   sed -i 's#"freetrialsubscriptionid": "<>"#"freetrialsubscriptionid": "$(freetrialsubscriptionid)"#g' aml_config/config.json
    
   displayName: 'replace subscription value'
 
