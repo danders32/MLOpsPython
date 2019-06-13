@@ -1,6 +1,5 @@
 {
-    "subscription_id_dev": "09e8ad18-7bdb-43b8-80c4-43ee53460e0b",
-    "subscription_id_prod": "f72a9681-95ab-4ad8-b7b1-b1f7b7c67f9c",
+    "subscription_id": "09e8ad18-7bdb-43b8-80c4-43ee53460e0b",
     "resource_group": "DevOps_AzureML_Demo",
     "workspace_name": "AzureML_Demo_ws",
     "location": "southcentralus"
