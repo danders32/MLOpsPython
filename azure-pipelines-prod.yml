@@ -36,20 +36,20 @@ steps:
    
   displayName: 'replace subscription value'
 
-- script: 'pytest tests/unit/data_test.py'
+- script: 'pytest tests/unit/data_test_Prod.py'
   displayName: 'Data Quality Check'
 
-- script: 'python aml_service/00-WorkSpace.py'
+- script: 'python aml_service/00-WorkSpace_Prod.py'
   displayName: 'Get or Create Workspace'
 
 
-- script: 'python aml_service/03-AttachAmlCluster.py'
+- script: 'python aml_service/03-AttachAmlCluster_Prod.py'
   displayName: 'Create AML Compute Cluster'
 
-- script: 'python aml_service/04-AmlPipelines.py'
+- script: 'python aml_service/04-AmlPipelines_Prod.py'
   displayName: 'Create and Test AML Pipeline'
 
-- script: 'python aml_service/04-AmlPipelines.py --pipeline_action publish'
+- script: 'python aml_service/04-AmlPipelines_Prod.py --pipeline_action publish'
   displayName: 'Publish AML Pipeline as Endpoint'
 
 
